@@ -70,6 +70,39 @@
       </nav>  
     </div> 
   </nav>
+  <style type="text/css">
+#photo {
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+#photo img {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+</style>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    var setImg = '#photo';
+    var fadeSpeed = 1600;
+    var switchDelay = 3000;
+
+    $(setImg).children('img').css({opacity:'0'});
+    $(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
+
+    setInterval(function(){
+        $(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
+    },switchDelay);
+});
+</script>
 </header>
 <main class="" id="main-collapse">
 
@@ -81,14 +114,14 @@
   </div>
 
   <div class="col-xs-12 col-md-4 section-container-spacer">
-    <img class="img-responsive" alt="" src="./assets/images/img-12.jpg">
+    <img class="img-responsive" alt="" src="./assets/images/IMG_6225.jpg">
     <h2>Work/工作</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <a href="./contact.html" class="btn btn-primary" title=""> Get in touch</a>
   </div>
 
   <div class="col-xs-12 col-md-4 section-container-spacer">
-    <img class="img-responsive" alt="" src="./assets/images/img-13.jpg">
+    <img class="img-responsive" alt="" src="./assets/images/158.jpg">
     <h2>Music/音乐</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <a href="./contact.html" class="btn btn-primary" title=""> Get in touch</a>
